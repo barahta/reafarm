@@ -1,0 +1,1008 @@
+@media screen and (min-width: 1600px){
+  .main{
+    width: 100%;
+    height: calc(100% + 4px);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2px;
+    //padding-top: 100px;
+    background-color: #410099;
+    background-image: url("./images/planets.svg");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .container{
+      width: 100%;
+      min-height: calc(100vh - 1px);
+      max-width: 1920px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+          width: 50%;
+          transform: scaleX(-1);
+          .raket{
+            width: 500px;
+            height: 300px;
+            position: relative;
+            .fireraket{
+              position: absolute;
+              top: 105px;
+              left: 0px;
+              .p1{
+                position: absolute;
+                width: 84px;
+                height: 57px;
+                background-image: url("./images/p1.svg");
+                background-repeat: no-repeat;
+                top: 0px;
+                left: 0px;
+                animation: drive1 1.5s ease-in-out infinite;
+              }
+
+              @keyframes drive1 {
+                0% {
+                  top: 0px;
+                  left: 0px;
+                }
+                50% {
+                  top: 2px;
+                  left: 2px;
+                }
+                100% {
+                  top: 0px;
+                  left: 0px;
+                }
+              }
+              .p2{
+                position: absolute;
+                width: 64px;
+                height: 43px;
+                background-image: url("./images/p2.svg");
+                background-repeat: no-repeat;
+                top: 5px;
+                left: 19px;
+
+                animation: drive2 1s ease-in-out infinite;
+              }
+
+              @keyframes drive2 {
+                0% {
+                  top: 5px;
+                  left: 19px;
+                }
+                50% {
+                  top: 7px;
+                  left: 21px;
+                }
+                100% {
+                  top: 5px;
+                  left: 19px;
+                }
+              }
+              .p3{
+                position: absolute;
+                width: 43px;
+                height: 28px;
+                background-image: url("./images/p3.svg");
+                background-repeat: no-repeat;
+                top: 10px;
+                left: 40px;
+
+                animation: drive3 0.5s ease-in-out infinite;
+              }
+
+              @keyframes drive3 {
+                0% {
+                  width: 43px;
+                  height: 28px;
+                }
+                50% {
+                  width: 45px;
+                  height: 30px;
+                }
+                100% {
+                  width: 43px;
+                  height: 28px;
+                }
+              }
+            }
+            .bodyraket{
+              position: absolute;
+              top: 0px;
+              left: 80px;
+
+              width: 262px;
+              height: 223px;
+              background-image: url("./images/pencial.svg");
+              background-repeat: no-repeat;
+            }
+          }
+          img{
+            width: 70%;
+            animation: moveLeftRight 3s ease-in-out infinite;
+            margin-left: 50px;
+          }
+          @keyframes moveLeftRight {
+            0% {
+              transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            50% {
+              transform: translateX(10px) translateY(10px) rotate(2deg);
+            }
+            100% {
+              transform: translateX(0) translateY(0) rotate(0deg);
+            }
+          }
+        }
+
+        .right{
+          width: calc(50% - 180px);
+          padding: 60px 60px 60px 60px;
+          background-color: #FFFFFF;
+          margin-left: 60px;
+          .title{
+            font-family: 'ALS';
+            font-size: 60pt;
+            text-transform: uppercase;
+            margin-bottom: 100px;
+            color: #454545;
+          }
+          .pretitle{
+            font-size: 40pt;
+            text-transform: uppercase;
+            color: #595959;
+          }
+          .btnwriten{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .btn{
+              padding: 20px 50px;
+              border: 1px solid #CCC;
+              font-size: 16pt;
+              margin-top: 30px;
+              transition: 0.3s;
+              cursor: pointer;
+            }
+            .btn:hover{
+              background-color: #410099;
+              transition: 0.3s;
+              color: #FFF;
+            }
+          }
+
+          .desc{
+
+            font-size: 20pt;
+            color: #454545;
+          }
+        }
+      }
+
+    }
+    //@media (min-width: 1920px) {
+    //  .container {
+    //    background-size: 1920px auto;
+    //    background-repeat: no-repeat;
+    //  }
+    //}
+
+    .totalblock{
+      width: 100%;
+      max-width: 1920px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 100px;
+      .clockblock{
+        width: calc(100% / 4 - 80px);
+        height: 400px;
+        //border-radius: 20px;
+        background-color: rgba(255,255,255,0.9);
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 7px 7px 0px rgba(0,0,0,0.5);
+        .icon{
+          width: 140px;
+          height: 140px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+        .num{
+          font-size: 60pt;
+          font-weight: 800;
+          font-family: 'ALS';
+          color: #410099;
+        }
+        .name{
+          font-size: 30pt;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #454545;
+          height: 40px;
+        }
+        .desc{
+          text-align: center;
+          height: 100px;
+          font-size: 16pt;
+        }
+      }
+    }
+
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1600px){
+  .main{
+    width: 100%;
+    height: calc(100% + 4px);
+    //min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2px;
+    //padding-top: 100px;
+    background-color: #410099;
+    background-image: url("./images/planets.svg");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .container{
+      width: 100%;
+      //min-height: calc(100vh - 1px);
+      max-width: 1920px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+      .content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+          width: 40%;
+          transform: scaleX(-1);
+          .raket{
+            width: calc(500px / 2) ;
+            height: calc(300px / 2);
+            position: relative;
+            .fireraket{
+              position: absolute;
+              top: 69px;
+              left: 30px;
+              .p1{
+                position: absolute;
+                width: calc(84px / 1.5);
+                height: calc(57px / 1.5);
+                background-image: url("./images/p1.svg");
+                background-repeat: no-repeat;
+                top: 0px;
+                left: 0px;
+                animation: drive1 1.5s ease-in-out infinite;
+              }
+
+              @keyframes drive1 {
+                0% {
+                  top: 0px;
+                  left: 0px;
+                }
+                50% {
+                  top: 2px;
+                  left: 2px;
+                }
+                100% {
+                  top: 0px;
+                  left: 0px;
+                }
+              }
+              .p2{
+                position: absolute;
+                width: calc(64px / 1.5);
+                height: calc(43px / 1.5);
+                background-image: url("./images/p2.svg");
+                background-repeat: no-repeat;
+                top: 2px;
+                left: 8px;
+
+                animation: drive2 1s ease-in-out infinite;
+              }
+
+              @keyframes drive2 {
+                0% {
+                  top: 5px;
+                  left: 19px;
+                }
+                50% {
+                  top: 7px;
+                  left: 21px;
+                }
+                100% {
+                  top: 5px;
+                  left: 19px;
+                }
+              }
+              .p3{
+                position: absolute;
+                width: calc(43px / 2);
+                height: calc(28px / 2);
+                background-image: url("./images/p3.svg");
+                background-repeat: no-repeat;
+                top: 3px;
+                left: 20px;
+
+                animation: drive3 0.5s ease-in-out infinite;
+              }
+
+              @keyframes drive3 {
+                0% {
+                  width: 43px;
+                  height: 28px;
+                }
+                50% {
+                  width: 45px;
+                  height: 30px;
+                }
+                100% {
+                  width: 43px;
+                  height: 28px;
+                }
+              }
+            }
+            .bodyraket{
+              position: absolute;
+              top: 0px;
+              left: 80px;
+
+              width: calc(262px / 1.5);
+              height: calc(223px / 1.5);
+              background-image: url("./images/pencial.svg");
+              background-repeat: no-repeat;
+            }
+          }
+          img{
+            width: 40%;
+            animation: moveLeftRight 3s ease-in-out infinite;
+            margin-left: -150px;
+          }
+          @keyframes moveLeftRight {
+            0% {
+              transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            50% {
+              transform: translateX(10px) translateY(10px) rotate(2deg);
+            }
+            100% {
+              transform: translateX(0) translateY(0) rotate(0deg);
+            }
+          }
+        }
+
+        .right{
+          width: calc(50% - 180px);
+          padding: 60px 60px 60px 60px;
+          background-color: #FFFFFF;
+          margin-left: 60px;
+          .title{
+            font-family: 'ALS';
+            font-size: 26pt;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            color: #454545;
+          }
+          .pretitle{
+            font-size: 30pt;
+            text-transform: uppercase;
+            color: #595959;
+          }
+          .btnwriten{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .btn{
+              padding: 20px 50px;
+              border: 1px solid #CCC;
+              font-size: 16pt;
+              margin-top: 30px;
+              transition: 0.3s;
+              cursor: pointer;
+            }
+            .btn:hover{
+              background-color: #410099;
+              transition: 0.3s;
+              color: #FFF;
+            }
+          }
+
+          .desc{
+
+            font-size: 16pt;
+            color: #454545;
+          }
+        }
+      }
+
+    }
+    //@media (min-width: 1920px) {
+    //  .container {
+    //    background-size: 1920px auto;
+    //    background-repeat: no-repeat;
+    //  }
+    //}
+
+    .totalblock{
+      width: 100%;
+      max-width: 1920px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 100px;
+      .clockblock{
+        width: calc(100% / 2 - 80px);
+        height: 300px;
+        //border-radius: 20px;
+        background-color: rgba(255,255,255,0.9);
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 7px 7px 0px rgba(0,0,0,0.5);
+        margin-bottom: 30px;
+        .icon{
+          width: 140px;
+          height: 140px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+        .num{
+          font-size: 40pt;
+          font-weight: 800;
+          font-family: 'ALS';
+          color: #410099;
+        }
+        .name{
+          font-size: 20pt;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #454545;
+          height: 40px;
+        }
+        .desc{
+          text-align: center;
+          height: 100px;
+          font-size: 14pt;
+        }
+      }
+    }
+
+  }
+}
+@media screen and (min-width: 650px) and (max-width: 900px){
+  .main{
+    width: 100%;
+    height: calc(100% + 4px);
+    //min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2px;
+    //padding-top: 100px;
+    background-color: #410099;
+    background-image: url("./images/planets.svg");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .container{
+      width: 100%;
+      //min-height: calc(100vh - 1px);
+      max-width: 1920px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+      .content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        .left{
+          position: absolute;
+          top: -100px;
+          right: 0;
+          //display: none;
+          width: 40%;
+          transform: scaleX(-1);
+          .raket{
+            width: calc(500px / 2) ;
+            height: calc(300px / 2);
+            position: relative;
+            .fireraket{
+              position: absolute;
+              top: 69px;
+              left: 30px;
+              .p1{
+                position: absolute;
+                width: calc(84px / 1.5);
+                height: calc(57px / 1.5);
+                background-image: url("./images/p1.svg");
+                background-repeat: no-repeat;
+                top: 0px;
+                left: 0px;
+                animation: drive1 1.5s ease-in-out infinite;
+              }
+
+              @keyframes drive1 {
+                0% {
+                  top: 0px;
+                  left: 0px;
+                }
+                50% {
+                  top: 2px;
+                  left: 2px;
+                }
+                100% {
+                  top: 0px;
+                  left: 0px;
+                }
+              }
+              .p2{
+                position: absolute;
+                width: calc(64px / 1.5);
+                height: calc(43px / 1.5);
+                background-image: url("./images/p2.svg");
+                background-repeat: no-repeat;
+                top: 2px;
+                left: 8px;
+
+                animation: drive2 1s ease-in-out infinite;
+              }
+
+              @keyframes drive2 {
+                0% {
+                  top: 5px;
+                  left: 19px;
+                }
+                50% {
+                  top: 7px;
+                  left: 21px;
+                }
+                100% {
+                  top: 5px;
+                  left: 19px;
+                }
+              }
+              .p3{
+                position: absolute;
+                width: calc(43px / 2);
+                height: calc(28px / 2);
+                background-image: url("./images/p3.svg");
+                background-repeat: no-repeat;
+                top: 3px;
+                left: 20px;
+
+                animation: drive3 0.5s ease-in-out infinite;
+              }
+
+              @keyframes drive3 {
+                0% {
+                  width: 43px;
+                  height: 28px;
+                }
+                50% {
+                  width: 45px;
+                  height: 30px;
+                }
+                100% {
+                  width: 43px;
+                  height: 28px;
+                }
+              }
+            }
+            .bodyraket{
+              position: absolute;
+              top: 0px;
+              left: 80px;
+
+              width: calc(262px / 1.5);
+              height: calc(223px / 1.5);
+              background-image: url("./images/pencial.svg");
+              background-repeat: no-repeat;
+            }
+          }
+          img{
+            width: 40%;
+            animation: moveLeftRight 3s ease-in-out infinite;
+            margin-left: -150px;
+          }
+          @keyframes moveLeftRight {
+            0% {
+              transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            50% {
+              transform: translateX(10px) translateY(10px) rotate(2deg);
+            }
+            100% {
+              transform: translateX(0) translateY(0) rotate(0deg);
+            }
+          }
+        }
+
+        .right{
+          width: calc(100% - 180px);
+          padding: 60px 60px 60px 60px;
+          background-color: #FFFFFF;
+          margin-left: 30px;
+          .title{
+            font-family: 'ALS';
+            font-size: 26pt;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            color: #454545;
+          }
+          .pretitle{
+            font-size: 30pt;
+            text-transform: uppercase;
+            color: #595959;
+          }
+          .btnwriten{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .btn{
+              padding: 20px 50px;
+              border: 1px solid #CCC;
+              font-size: 16pt;
+              margin-top: 30px;
+              transition: 0.3s;
+              cursor: pointer;
+            }
+            .btn:hover{
+              background-color: #410099;
+              transition: 0.3s;
+              color: #FFF;
+            }
+          }
+
+          .desc{
+
+            font-size: 16pt;
+            color: #454545;
+          }
+        }
+      }
+
+    }
+
+    .totalblock{
+      width: 100%;
+      max-width: 1920px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 100px;
+      .clockblock{
+        width: calc(100% / 2 - 80px);
+        height: 300px;
+        //border-radius: 20px;
+        background-color: rgba(255,255,255,0.9);
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 7px 7px 0px rgba(0,0,0,0.5);
+        margin-bottom: 30px;
+        .icon{
+          width: 140px;
+          height: 140px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+        .num{
+          font-size: 30pt;
+          font-weight: 800;
+          font-family: 'ALS';
+          color: #410099;
+        }
+        .name{
+          font-size: 18pt;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #454545;
+          height: 40px;
+        }
+        .desc{
+          text-align: center;
+          height: 100px;
+          font-size: 12pt;
+        }
+      }
+    }
+
+  }
+}
+@media screen and (max-width: 650px){
+  .main{
+    width: 100%;
+    height: calc(100% + 4px);
+    //min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2px;
+    //padding-top: 100px;
+    background-color: #410099;
+    background-image: url("./images/planets.svg");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .container{
+      width: 100%;
+      //min-height: calc(100vh - 1px);
+      max-width: 1920px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+      .content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        .left{
+          position: absolute;
+          top: -100px;
+          right: 0;
+          //display: none;
+          width: 40%;
+          transform: scaleX(-1);
+          .raket{
+            width: calc(500px / 2) ;
+            height: calc(300px / 2);
+            position: relative;
+            .fireraket{
+              position: absolute;
+              top: 69px;
+              left: 30px;
+              .p1{
+                position: absolute;
+                width: calc(84px / 1.5);
+                height: calc(57px / 1.5);
+                background-image: url("./images/p1.svg");
+                background-repeat: no-repeat;
+                top: 0px;
+                left: 0px;
+                animation: drive1 1.5s ease-in-out infinite;
+              }
+
+              @keyframes drive1 {
+                0% {
+                  top: 0px;
+                  left: 0px;
+                }
+                50% {
+                  top: 2px;
+                  left: 2px;
+                }
+                100% {
+                  top: 0px;
+                  left: 0px;
+                }
+              }
+              .p2{
+                position: absolute;
+                width: calc(64px / 1.5);
+                height: calc(43px / 1.5);
+                background-image: url("./images/p2.svg");
+                background-repeat: no-repeat;
+                top: 2px;
+                left: 8px;
+
+                animation: drive2 1s ease-in-out infinite;
+              }
+
+              @keyframes drive2 {
+                0% {
+                  top: 5px;
+                  left: 19px;
+                }
+                50% {
+                  top: 7px;
+                  left: 21px;
+                }
+                100% {
+                  top: 5px;
+                  left: 19px;
+                }
+              }
+              .p3{
+                position: absolute;
+                width: calc(43px / 2);
+                height: calc(28px / 2);
+                background-image: url("./images/p3.svg");
+                background-repeat: no-repeat;
+                top: 3px;
+                left: 20px;
+
+                animation: drive3 0.5s ease-in-out infinite;
+              }
+
+              @keyframes drive3 {
+                0% {
+                  width: 43px;
+                  height: 28px;
+                }
+                50% {
+                  width: 45px;
+                  height: 30px;
+                }
+                100% {
+                  width: 43px;
+                  height: 28px;
+                }
+              }
+            }
+            .bodyraket{
+              position: absolute;
+              top: 0px;
+              left: 80px;
+
+              width: calc(262px / 1.5);
+              height: calc(223px / 1.5);
+              background-image: url("./images/pencial.svg");
+              background-repeat: no-repeat;
+            }
+          }
+          img{
+            width: 40%;
+            animation: moveLeftRight 3s ease-in-out infinite;
+            margin-left: -150px;
+          }
+          @keyframes moveLeftRight {
+            0% {
+              transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            50% {
+              transform: translateX(10px) translateY(10px) rotate(2deg);
+            }
+            100% {
+              transform: translateX(0) translateY(0) rotate(0deg);
+            }
+          }
+        }
+
+        .right{
+          width: calc(100% - 180px);
+          padding: 60px 60px 60px 60px;
+          background-color: #FFFFFF;
+          margin-left: 30px;
+          .title{
+            font-family: 'ALS';
+            font-size: 24pt;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            color: #454545;
+          }
+          .pretitle{
+            font-size: 30pt;
+            text-transform: uppercase;
+            color: #595959;
+          }
+          .btnwriten{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .btn{
+              padding: 20px 50px;
+              border: 1px solid #CCC;
+              font-size: 16pt;
+              margin-top: 30px;
+              transition: 0.3s;
+              cursor: pointer;
+            }
+            .btn:hover{
+              background-color: #410099;
+              transition: 0.3s;
+              color: #FFF;
+            }
+          }
+
+          .desc{
+
+            font-size: 16pt;
+            color: #454545;
+          }
+        }
+      }
+
+    }
+
+    .totalblock{
+      width: 100%;
+      max-width: 1920px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 100px;
+      .clockblock{
+        width: calc(100% / 1 - 100px);
+        height: 300px;
+        //border-radius: 20px;
+        background-color: rgba(255,255,255,0.9);
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 7px 7px 0px rgba(0,0,0,0.5);
+        margin-bottom: 30px;
+        .icon{
+          width: 140px;
+          height: 140px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+        .num{
+          font-size: 30pt;
+          font-weight: 800;
+          font-family: 'ALS';
+          color: #410099;
+        }
+        .name{
+          font-size: 18pt;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #454545;
+          height: 40px;
+        }
+        .desc{
+          text-align: center;
+          height: 100px;
+          font-size: 12pt;
+        }
+      }
+    }
+
+  }
+}
