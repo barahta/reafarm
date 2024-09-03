@@ -35,12 +35,12 @@ function SmallHeader(){
 
                 <div className={style.rightpart}>
                     <div className={style.board}>
-                        <div  onClick={()=>postResume()} className={`${style.btn} ${style.left} ${style.down}`}>Записаться<div className={style.border}></div>
+                        <div  onClick={()=>postResume()} className={`${style.btn} ${style.left} ${style.down}`}>Заказать<div className={style.border}></div>
                         </div>
                         {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
-                        <Link to='/allprograms' className={`${style.btn} ${style.right} ${style.down}`}>Все программы<div className={style.border}></div></Link>
+                        <Link to='/allprograms' className={`${style.btn} ${style.right} ${style.down}`}>Каталог<div className={style.border}></div></Link>
                         <Link to='/contacts' className={`${style.btn} ${style.left}`}>Контакты<div className={style.border}></div></Link>
-                        <Link to='/phototour' className={`${style.btn} ${style.right}`}>Фототур<div className={style.border}></div></Link>
+                        <Link to='/phototour' className={`${style.btn} ${style.right}`}>Корзина<div className={style.border}></div></Link>
                     </div>
                 </div>
                 <div className={style.up}></div>
@@ -57,7 +57,7 @@ function SmallHeader(){
                     </div>
                     <div className={style.menu}>
                         <div onClick={()=>postResume()}  className={style.page}>
-                            <div className={style.text}>Записаться</div>
+                            <div className={style.text}>Заказать</div>
                             <div className={style.active}></div>
                         </div>
                         {/*<div className={style.page}>*/}
@@ -65,11 +65,11 @@ function SmallHeader(){
                         {/*    <div className={style.active}></div>*/}
                         {/*</div>*/}
                         <Link to='/allprograms' className={style.page}>
-                            <div className={style.text}>Все программы</div>
+                            <div className={style.text}>Каталог</div>
                             <div className={style.active}></div>
                         </Link>
                         <Link to='/phototour' className={style.page}>
-                            <div className={style.text}>Фототур</div>
+                            <div className={style.text}>Корзина</div>
                             <div className={style.active}></div>
                         </Link>
                         <Link to='/contacts' className={style.page}>

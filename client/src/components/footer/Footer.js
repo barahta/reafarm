@@ -5,7 +5,7 @@ function Footer (){
     return(
         <div className={style.main}>
             <div className={style.omediawater}></div>
-            <div className={style.omedia}>HOPE KIDS</div>
+            <div className={style.omedia}>REA FARM</div>
             <div className={style.container}>
                 <div className={style.content}>
                     <div className={style.upper}>
@@ -16,11 +16,11 @@ function Footer (){
                             {/*</div>*/}
                             <Link to='/activegroup' className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Записаться</div>
+                                <div className={style.text}>Сделать заказ</div>
                             </Link>
                             <Link to='/allnews'  className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Все программы</div>
+                                <div className={style.text}>Каталог</div>
                             </Link>
                         </div>
                         {/*<div className={style.column}>*/}
@@ -36,7 +36,7 @@ function Footer (){
                         <div className={style.column}>
                             <Link to='/contacts'  className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Фототур</div>
+                                <div className={style.text}>Контакты</div>
                             </Link>
                         </div>
                     </div>
@@ -47,11 +47,11 @@ function Footer (){
                             {/*</div>*/}
                             <Link to={'/activegroup'} className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Записаться</div>
+                                <div className={style.text}>Сделать заказ</div>
                             </Link>
                             <Link to={'/allnews'} className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Все программы</div>
+                                <div className={style.text}>Каталог</div>
                             </Link>
                             {/*<div className={style.point}>*/}
                             {/*    <div className={style.next}></div>*/}
@@ -63,14 +63,14 @@ function Footer (){
                             {/*</div>*/}
                             <Link to={'/contacts'} className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Фототур</div>
+                                <div className={style.text}>Контакты</div>
                             </Link>
                     </div>
                 </div>
                 <div className={style.contacts}>
                     <div className={style.data}>
-                        <div className={style.adress}>г. Сургут, ул. Университетская 1</div>
-                        <div className={style.phone}>8(3462) 51-11-72</div>
+                        <div className={style.adress}>г. Сургут, ул. Гидростроителей 5</div>
+                        <div className={style.phone}>+7 (3462) 51-13-98</div>
                     </div>
                     <div className={style.sociality}>
                         <img src="/files/sociality/vk.png" alt=""/>
@@ -81,7 +81,7 @@ function Footer (){
 
                         </div>
                         <div className={style.description}>
-                            <div className={style.text}>"Сетевое издание "ОМЕДИА!"</div>
+                            <div className={style.text}>КФХ «РЕАФАРМ»</div>
                             <div className={style.text}>Все права защищены</div>
                         </div>
                     </div>

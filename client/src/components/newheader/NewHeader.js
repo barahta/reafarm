@@ -41,15 +41,15 @@ function NewHeader() {
             </div>
             <div className={style.container}>
                 <div className={style.leftpart}>
-                    <img src="/files/header/hopekidsw.svg" alt=""/>
+                    <img src="/files/header/reafarmw.svg" alt=""/> w
                 </div>
                 <div className={style.rightpart}>
                     <div className={style.board}>
-                        <div onClick={()=>postResume()}  className={style.btn}>Записаться<div className={style.border}></div>
+                        <div onClick={()=>postResume()}  className={style.btn}>Заказать<div className={style.border}></div>
                         </div>
                         {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
-                        <Link to='/allprograms' className={style.btn}>Все программы<div className={style.border}></div></Link>
-                        <Link to='/contacts' className={style.btn}>Фототур<div className={style.border}></div></Link>
+                        <Link to='/allprograms' className={style.btn}>Каталог<div className={style.border}></div></Link>
+                        <Link to='/contacts' className={style.btn}>Корзина<div className={style.border}></div></Link>
                         <Link to='/contacts' className={style.btn}>Контакты<div className={style.border}></div></Link>
                     </div>
 

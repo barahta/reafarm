@@ -2,36 +2,71 @@ import style from './Cosmos.module.scss'
 import {useState} from "react";
 function Cosmos () {
 
-    const whys = [
+    const catalog = [
         {
-            title: 'Отличные аниматоры',
-            image: '6.jpg',
-            desc: 'У нас большая команда аниматоров. Профессионалы своего дела, которые сделают ваш праздник незабываемым.'
+            name: 'Бораго',
+            category: 'Микрозелень',
+            image: '7.png'
         },
         {
-            title: 'Интересные мастер-классы',
-            image: '1.jpg',
-            desc: 'Более 20 различных мастер-классов. Каждый найдет занятие по душе.'
+            name: 'Горох',
+            category: 'Микрозелень',
+            image: '8.png'
         },
         {
-            title: 'НАМ УЖЕ 3 года',
-            image: '4.jpg',
-            desc: 'Большое количество положительных отзывов подтверждают наш трепетный подход к своему делу!'
+            name: 'Подсолнух',
+            category: 'Микрозелень',
+            image: '9.png'
         },
         {
-            title: 'Игровой лабиринт',
-            image: '2.jpg',
-            desc: 'Многоуровневый игровой лабиринт с горками и тоннелями. '
+            name: 'Редис',
+            category: 'Микрозелень',
+            image: '10.png'
         },
         {
-            title: 'Бассейн с шариками',
-            image: '3.jpg',
-            desc: 'Большой бассейн с шариками. Вашему ребенку точно понравится!'
+            name: 'Lollo white',
+            category: 'Lollo white',
+            image: '11.png'
         },
         {
-            title: 'Свой бар',
-            image: '5.jpg',
-            desc: 'Большой выбор разнообразных напитков и десертов для детей. А для родителей у нас есть кофе.'
+            name: 'Айсберг листовой',
+            category: 'Lollo white',
+            image: '12.png'
+        },
+        {
+            name: 'Дубачек листовой',
+            category: 'Lollo white',
+            image: '13.png'
+        },
+        {
+            name: 'Дуболистный блонд',
+            category: 'Lollo white',
+            image: '14.png'
+        },
+        {
+            name: 'Роселла Кайпира',
+            category: 'Lollo white',
+            image: '15.png'
+        },
+        {
+            name: 'Капуста Кейл',
+            category: 'Салатные культуры',
+            image: '16.png'
+        },
+        {
+            name: 'Мелисса Мандариновая',
+            category: 'Салатные культуры',
+            image: '17.png'
+        },
+        {
+            name: 'Руккола',
+            category: 'Салатные культуры',
+            image: '18.png'
+        },
+        {
+            name: 'Татсой',
+            category: 'Салатные культуры',
+            image: '19.png'
         }
     ]
 
@@ -45,32 +80,41 @@ function Cosmos () {
             <div className={style.container}>
                 <div className={style.content}>
                     <div className={style.left}>
-                        <img src="./files/kids/cosmos.gif" alt=""/>
+                        <img className={style.img1} src="./files/green/1.png" alt=""/>
+                        <img className={style.img2} src="./files/green/2.png" alt=""/>
+                        <img className={style.img3} src="./files/green/3.png" alt=""/>
+                        <img className={style.img4} src="./files/green/4.png" alt=""/>
                     </div>
                     <div className={style.right}>
                         <div className={style.title}>
-                            hope kids
+                            REA FARM
                         </div>
                         <div className={style.pretitle}>
-                            путь к Счастью вашего ребёнка!
+                            КФХ "Реафарм"
                         </div>
                         <div className={style.desc}>
-                            В HopeKids с радостью организуют и проведут самые главные и важные события для ребят. Это дни рождения, выпускные, утренники. На базе детского центра проходят интересные, а зачастую эксклюзивные мастер-классы, подготовлены костюмированные программы. Есть все, чтобы праздник оказался незабываемым.
+                            КФХ "Реафарм" выращивает более 30 видов различной зелени: мелисса, руккола, базилик, мята перечная, шпинат шелби, щавель, микрозелень (горох, бораго, подсолнух, редис), съедобные цветы и др.
                         </div>
                     </div>
                 </div>
                 <div className={style.contenttwo}>
-                    <div className={style.blocks}>
-                        {whys.map((block, index) => (
-                            <div key={index} className={style.why}>
-                                <div className={style.imgblock}  style={{backgroundImage: `url('files/kids/${block.image}')`}}></div>
-                                <div className={style.desc}>
-                                    <div className={style.title}>{block.title}</div>
-                                    <div className={style.description}>{block.desc}</div>
-                                </div>
+                    <div className={style.title}><div className={style.nameblock}>НОВИНКИ</div><div className={style.relocation}>см. все</div></div>
+                    <div className={style.products}>
+                        {catalog.map((green, index)=>{if(index<10){return(
+                            <div key={index} className={style.block}>
+                                <div className={style.aplicate} style={{backgroundImage: `url('./files/products/${green.image}')`}}></div>
+                                <div className={style.name}>{green.name}</div>
+                                <div className={style.category}>{green.category}</div>
+                                <div className={style.btncart}>БОЛЬШЕ</div>
                             </div>
-                        ))}
+                        )}})}
                     </div>
+
+
+
+                </div>
+                <div className={style.moreblock}>
+                    <div className={style.more}>Перейтив каталог</div>
                 </div>
             </div>
         </div>

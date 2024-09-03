@@ -91,16 +91,16 @@ function Contacts() {
                 <div className={style.ontheleft}>
                     <div className={style.container50}>
                         <div className={style.strock}>телефон</div>
-                        <div className={style.strock}>+7 (3462) 51-11-72</div>
+                        <div className={style.strock}>+7 (3462) 51-13-98</div>
                         <div className={style.strock}>адрес</div>
-                        <div className={style.strock}>г. Сургут, ул. Университетская 19</div>
+                        <div className={style.strock}>г. Сургут, ул. Гидростроителей 5</div>
                     </div>
                 </div>
                 <div className={style.ontheright}>
                     <div className={style.container50}>
                         <div className={style.entry}>
-                            <Link to='/allprograms' className={style.btn}>Все программы</Link>
-                            <div className={style.btn} onClick={()=>postResume()}>Записаться</div>
+                            <Link to='/allprograms' className={style.btn}>Каталог</Link>
+                            <div className={style.btn} onClick={()=>postResume()}>Сделать заказ</div>
                         </div>
                     </div>
                 </div>

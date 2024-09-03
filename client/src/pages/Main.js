@@ -22,8 +22,8 @@ function Main () {
         <div className={style.bodymain}>
             <NewHeader />
             <Cosmos />
-            <Planet />
-            <Prices />
+            {/*<Planet />*/}
+            {/*<Prices />*/}
             {/*<TwoBlocks />*/}
             {/*<Group />*/}
             {/*<NewAbout />*/}
