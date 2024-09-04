@@ -3,7 +3,7 @@
   "DB_NAME" : "postgres",
   "DB_USER": "postgres",
   "DB_PASSWORD": "1234qwer",
-  "DB_HOST": "81.177.6.246",
+  "DB_HOST": "localhost",
   "DB_PORT": 5432,
   "jwtAccessSecret": "omedia",
   "jwtRefreshSecret": "group",

@@ -9,6 +9,9 @@ function NewHeader() {
     const [showVideo, setShowVideo] = useState(false);
     const [activemodal, setActivemodal] = useState(false)
     const [data, setData] = useState('')
+    const [cart, setCart] = useState(false)
+
+    const [activecart, setActivecart] = useState(false)
 
     const postResume = (pos = '') => {
         setData(pos)
@@ -41,15 +44,15 @@ function NewHeader() {
             </div>
             <div className={style.container}>
                 <div className={style.leftpart}>
-                    <img src="/files/header/reafarmw.svg" alt=""/> w
+                    <img src="/files/header/reafarmw.svg" alt=""/>
                 </div>
                 <div className={style.rightpart}>
                     <div className={style.board}>
                         <div onClick={()=>postResume()}  className={style.btn}>Заказать<div className={style.border}></div>
                         </div>
                         {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
-                        <Link to='/allprograms' className={style.btn}>Каталог<div className={style.border}></div></Link>
-                        <Link to='/contacts' className={style.btn}>Корзина<div className={style.border}></div></Link>
+                        <Link to='/catalog' className={style.btn}>Каталог<div className={style.border}></div></Link>
+                        {/*<div className={style.btn} onClick={()=>setCart(true)}>Корзина<div className={style.border}></div></div>*/}
                         <Link to='/contacts' className={style.btn}>Контакты<div className={style.border}></div></Link>
                     </div>
 

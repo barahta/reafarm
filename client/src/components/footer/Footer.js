@@ -14,11 +14,11 @@ function Footer (){
                             {/*    <div className={style.next}></div>*/}
                             {/*    <div className={style.text}>О нас</div>*/}
                             {/*</div>*/}
-                            <Link to='/activegroup' className={style.point}>
+                            <Link to='/' className={style.point}>
                                 <div className={style.next}></div>
                                 <div className={style.text}>Сделать заказ</div>
                             </Link>
-                            <Link to='/allnews'  className={style.point}>
+                            <Link to='/catalog'  className={style.point}>
                                 <div className={style.next}></div>
                                 <div className={style.text}>Каталог</div>
                             </Link>
@@ -45,11 +45,11 @@ function Footer (){
                             {/*    <div className={style.next}></div>*/}
                             {/*    <div className={style.text}>О нас</div>*/}
                             {/*</div>*/}
-                            <Link to={'/activegroup'} className={style.point}>
+                            <Link to={'/'} className={style.point}>
                                 <div className={style.next}></div>
                                 <div className={style.text}>Сделать заказ</div>
                             </Link>
-                            <Link to={'/allnews'} className={style.point}>
+                            <Link to={'/catalog'} className={style.point}>
                                 <div className={style.next}></div>
                                 <div className={style.text}>Каталог</div>
                             </Link>

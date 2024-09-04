@@ -38,9 +38,9 @@ function SmallHeader(){
                         <div  onClick={()=>postResume()} className={`${style.btn} ${style.left} ${style.down}`}>Заказать<div className={style.border}></div>
                         </div>
                         {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
-                        <Link to='/allprograms' className={`${style.btn} ${style.right} ${style.down}`}>Каталог<div className={style.border}></div></Link>
+                        <Link to='/catalog' className={`${style.btn} ${style.right} ${style.down}`}>Каталог<div className={style.border}></div></Link>
                         <Link to='/contacts' className={`${style.btn} ${style.left}`}>Контакты<div className={style.border}></div></Link>
-                        <Link to='/phototour' className={`${style.btn} ${style.right}`}>Корзина<div className={style.border}></div></Link>
+                        {/*<Link to='/phototour' className={`${style.btn} ${style.right}`}>Корзина<div className={style.border}></div></Link>*/}
                     </div>
                 </div>
                 <div className={style.up}></div>
@@ -64,14 +64,14 @@ function SmallHeader(){
                         {/*    <div className={style.text}>О нас</div>*/}
                         {/*    <div className={style.active}></div>*/}
                         {/*</div>*/}
-                        <Link to='/allprograms' className={style.page}>
+                        <Link to='/catalog' className={style.page}>
                             <div className={style.text}>Каталог</div>
                             <div className={style.active}></div>
                         </Link>
-                        <Link to='/phototour' className={style.page}>
-                            <div className={style.text}>Корзина</div>
-                            <div className={style.active}></div>
-                        </Link>
+                        {/*<Link to='/phototour' className={style.page}>*/}
+                        {/*    <div className={style.text}>Корзина</div>*/}
+                        {/*    <div className={style.active}></div>*/}
+                        {/*</Link>*/}
                         <Link to='/contacts' className={style.page}>
                             <div className={style.text}>Контакты</div>
                             <div className={style.active}></div>

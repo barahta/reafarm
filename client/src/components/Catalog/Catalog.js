@@ -1,11 +1,6 @@
-import style from './Cosmos.module.scss'
-import {useState} from "react";
-import {Link} from "react-router-dom";
-import Cart from "../cart/Cart";
-import BigModal from "../modalwin/BigModal";
-import EntryBlanck from "../forms/EntryBlanck";
-import WriteModal from "../modalwin/WriteModal";
-function Cosmos () {
+import style from './Catalog.module.scss'
+import {useEffect, useState} from "react";
+function Catalog () {
 
     const catalog = [
         {
@@ -165,50 +160,93 @@ function Cosmos () {
 
     ]
 
+    const menu = [
+        {
+            id: 0,
+            name: 'Базилик'
+        },
+        {
+            id: 1,
+            name: 'Микрозелень'
+        },
+        {
+            id: 2,
+            name: 'Мята перечная Ментол'
+        },
+        {
+            id: 3,
+            name: 'Салат микс'
+        },
+        {
+            id: 4,
+            name: 'Салатные культуры'
+        },
+        {
+            id: 5,
+            name: 'Съедобные цветы'
+        },
+        {
+            id: 6,
+            name: 'Шпинат шелби'
+        },
+        {
+            id: 7,
+            name: 'Щавель Бальвийский'
+        }
+    ]
+    const [categoty, setCtegory] = useState('')
     const [activeblock, setActiveblock] = useState('')
-    const [view, setView] = useState('')
-    const [opengreen, setOpengreen] = useState(false)
-    const [activemodal, setActivemodal] = useState(false)
-    const [data, setData] = useState('')
+    const [view, setView] = useState([])
 
+    const openCat = (cat)=> {
+        setCtegory(cat)
+        const newarr = []
+        if(cat.length > 0){
+            catalog.forEach(item=>{
+                if(item.category === cat){
+                    newarr.push(item)
+                }
+            })
+            setView(newarr)
+        }else{
+            setView(catalog)
+        }
+    }
+    useEffect(()=>{
+        setView(catalog)
+    }, [])
     return(
         <div className={style.main}>
-            {/*BigModal({activemodal, setActivemodal, data, setData}*/}
-            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<EntryBlanck man={data}  setActivemodal={setActivemodal}/>} setData={setData} />
-            <BigModal activemodal={opengreen} setActivemodal={setOpengreen} data={<Cart data={view} setData={setView} setActivemodal={setOpengreen} write={activemodal} setWrite={setActivemodal}/>} setData={setView}/>
-
 
             <div className={style.paralax}>
             </div>
+            <div className={style.menu}>
+                <div className={style.containermenu}>
+                    {menu.map((item, index) => (
+                        <div className={style.itemmenu} key={index} onClick={()=>openCat(item.name)}>{item.name}</div>
+                    ))}
+
+                </div>
+            </div>
+            <div className={style.containername}>
+                <div className={style.category}>
+                    {(categoty.length < 1)?'Вся продукция':categoty}
+                    <div className={style.moreitems} style={(categoty.length < 1)?{display: 'none'}:{}}  onClick={()=>openCat('')}>см. все</div>
+                </div>
+            </div>
+
             <div className={style.container}>
                 <div className={style.content}>
-                    <div className={style.left}>
-                        <img className={style.img1} src="./files/green/1.png" alt=""/>
-                        <img className={style.img2} src="./files/green/2.png" alt=""/>
-                        <img className={style.img3} src="./files/green/3.png" alt=""/>
-                        <img className={style.img4} src="./files/green/4.png" alt=""/>
-                    </div>
-                    <div className={style.right}>
-                        <div className={style.title}>
-                            REA FARM
-                        </div>
-                        <div className={style.pretitle}>
-                            КФХ "Реафарм"
-                        </div>
-                        <div className={style.desc}>
-                            КФХ "Реафарм" выращивает более 30 видов различной зелени: мелисса, руккола, базилик, мята перечная, шпинат шелби, щавель, микрозелень (горох, бораго, подсолнух, редис), съедобные цветы и др.
-                        </div>
-                    </div>
                 </div>
                 <div className={style.contenttwo}>
-                    <div className={style.title}><div className={style.nameblock}>НОВИНКИ</div><Link to='/catalog' className={style.relocation}>см. все</Link></div>
+
                     <div className={style.products}>
-                        {catalog.map((green, index)=>{if(index<10){return(
+                        {(view.length > 0)&&view.map((green, index)=>{if(view){return(
                             <div key={index} className={style.block}>
                                 <div className={style.aplicate} style={{backgroundImage: `url('./files/products/${green.image}')`}}></div>
                                 <div className={style.name}>{green.name}</div>
                                 <div className={style.category}>{green.category}</div>
-                                <div className={style.btncart} onClick={()=>{setView(green); setOpengreen(true)}}>БОЛЬШЕ</div>
+                                <div className={style.btncart}>БОЛЬШЕ</div>
                             </div>
                         )}})}
                     </div>
@@ -216,12 +254,12 @@ function Cosmos () {
 
 
                 </div>
-                <div className={style.moreblock}>
-                    <Link to='/catalog' className={style.more} >Перейти в каталог</Link>
-                </div>
+                {/*<div className={style.moreblock}>*/}
+                {/*    <div className={style.more}>EЩЁ</div>*/}
+                {/*</div>*/}
             </div>
         </div>
     )
 }
 
-export default Cosmos
+export default Catalog
