@@ -9,6 +9,7 @@ import Contacts from "./pages/Contacts";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { faCartShopping, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 import {observer} from "mobx-react-lite";
 import Actives from "./pages/Actives";

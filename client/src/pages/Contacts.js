@@ -9,6 +9,7 @@ import PostContact from "../components/forms/PostContact";
 import {useMessage} from "../hooks/message.hook";
 import {Link} from "react-router-dom";
 import EntryBlanck from "../components/forms/EntryBlanck";
+import NewsService from "../services/NewsService";
 
 function Contacts() {
     const [activemodal, setActivemodal] = useState(false);
@@ -17,71 +18,22 @@ function Contacts() {
         setData(pos)
         setActivemodal(true)
     }
-    const people = [
-        {
-            photo: '1.png',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '2.png',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '3.png',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '4.png',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '5.png',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '6.png',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '7.png',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
+
+
+    const [allCity, setAllCity] = useState([]);
+
+    const getCities = async () => {
+        try{
+            const {data} = await NewsService.getCities({capter: 'reafarm'})
+            setAllCity(data)
+        }catch(e){
+            console.log(e)
         }
-    ];
+    }
+
+    useEffect(()=>{
+        getCities()
+    },[])
 
     return (
         <div className={style.bodymain}>
@@ -91,15 +43,16 @@ function Contacts() {
                 <div className={style.ontheleft}>
                     <div className={style.container50}>
                         <div className={style.strock}>телефон</div>
-                        <div className={style.strock}>+7 (3462) 51-13-98</div>
+                        <div className={style.strock}>{(allCity[0])&&allCity[0].phone}</div>
                         <div className={style.strock}>адрес</div>
-                        <div className={style.strock}>г. Сургут, ул. Гидростроителей 5</div>
+                        <div className={style.strock}>{(allCity[0])&&allCity[0].adress}</div>
+                        <div className={style.strock}>{(allCity[0])&&allCity[0].email}</div>
                     </div>
                 </div>
                 <div className={style.ontheright}>
                     <div className={style.container50}>
                         <div className={style.entry}>
-                            <Link to='/allprograms' className={style.btn}>Каталог</Link>
+                            <Link to='/catalog' className={style.btn}>Каталог</Link>
                             <div className={style.btn} onClick={()=>postResume()}>Сделать заказ</div>
                         </div>
                     </div>

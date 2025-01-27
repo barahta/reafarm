@@ -127,7 +127,17 @@
         }
         .sociality{
           margin-bottom: 20px;
-
+          i{
+            font-size: 40pt;
+            margin-left: 20px;
+            cursor: pointer;
+            color: #FFF;
+            transition: 0.2s;
+            &:hover{
+              color: #CCC;
+              transition: 0.2s;
+            }
+          }
           img{
             height: 50px;
             margin-left: 20px;
@@ -280,6 +290,17 @@
         }
         .sociality{
           margin-bottom: 20px;
+          i{
+            font-size: 40pt;
+            margin-left: 20px;
+            cursor: pointer;
+            color: #FFF;
+            transition: 0.2s;
+            &:hover{
+              color: #CCC;
+              transition: 0.2s;
+            }
+          }
           img{
             height: 50px;
             margin-left: 20px;

@@ -38,17 +38,17 @@ function NewHeader() {
                     playsInline
                     className={style.videoContent}
                 >
-                    <source src="/files/header/intro.mp4" type="video/mp4" />
+                    <source src={`${process.env.REACT_APP_API_URL}/videos/reafarm/video.mp4`} type="video/mp4" />
                 </video>
                 )}
             </div>
             <div className={style.container}>
                 <div className={style.leftpart}>
-                    <img src="/files/header/reafarmw.svg" alt=""/>
+                    <img src="/files/header/reafarm4.svg" alt=""/>
                 </div>
                 <div className={style.rightpart}>
                     <div className={style.board}>
-                        <div onClick={()=>postResume()}  className={style.btn}>Заказать<div className={style.border}></div>
+                        <div onClick={()=>postResume()}  className={style.btn}>Для ресторанов<div className={style.border}></div>
                         </div>
                         {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
                         <Link to='/catalog' className={style.btn}>Каталог<div className={style.border}></div></Link>

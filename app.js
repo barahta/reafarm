@@ -24,14 +24,16 @@ app.use(cookieParser())
 app.use(express.json({ extended: true,limit: '3mb' }))
 app.use(express.urlencoded({ extended: true,limit: '3mb' }))
 app.use('/api', router)
+
+app.use('/media', express.static('/var/www/adminomedia/client/build/'));
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
 app.use(errorMiddlewere) //Обязательно последний!
-// // Подключаем папку с билдом React-приложения
-// app.use(express.static(path.join(__dirname, 'client', 'build')));
-//
-// // Для всех остальных запросов отдаем index.html
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-// });
+
 const start = async () => {
     try{
 

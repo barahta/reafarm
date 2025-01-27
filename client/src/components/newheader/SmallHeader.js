@@ -35,7 +35,7 @@ function SmallHeader(){
 
                 <div className={style.rightpart}>
                     <div className={style.board}>
-                        <div  onClick={()=>postResume()} className={`${style.btn} ${style.left} ${style.down}`}>Заказать<div className={style.border}></div>
+                        <div  onClick={()=>postResume()} className={`${style.btn} ${style.left} ${style.down}`}>Для ресторанов<div className={style.border}></div>
                         </div>
                         {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
                         <Link to='/catalog' className={`${style.btn} ${style.right} ${style.down}`}>Каталог<div className={style.border}></div></Link>
@@ -57,7 +57,7 @@ function SmallHeader(){
                     </div>
                     <div className={style.menu}>
                         <div onClick={()=>postResume()}  className={style.page}>
-                            <div className={style.text}>Заказать</div>
+                            <div className={style.text}>Для ресторанов</div>
                             <div className={style.active}></div>
                         </div>
                         {/*<div className={style.page}>*/}

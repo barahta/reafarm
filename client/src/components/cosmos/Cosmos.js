@@ -1,10 +1,13 @@
 import style from './Cosmos.module.scss'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Cart from "../cart/Cart";
 import BigModal from "../modalwin/BigModal";
 import EntryBlanck from "../forms/EntryBlanck";
 import WriteModal from "../modalwin/WriteModal";
+import NewsService from "../../services/NewsService";
+import Product from "../Catalog/Product";
+import CartBlock from "../cart/CartBlock";
 function Cosmos () {
 
     const catalog = [
@@ -165,18 +168,39 @@ function Cosmos () {
 
     ]
 
+    const [list, setListcom] = useState([])
+
+
+    const getPacks = async () => {
+        try{
+            const {data} = await NewsService.getAllPacks({capter: 'reafarm'})
+            if(data){
+                console.log(data)
+                const sortedData = data.sort((a, b) => b.priory - a.priory);
+                const top10Data = sortedData.slice(0, 10);
+                setListcom(top10Data)
+            }
+        }catch(e){
+            console.log(e)
+        }
+    }
+
     const [activeblock, setActiveblock] = useState('')
     const [view, setView] = useState('')
     const [opengreen, setOpengreen] = useState(false)
     const [activemodal, setActivemodal] = useState(false)
     const [data, setData] = useState('')
 
+    useEffect(()=>{
+        getPacks()
+    },[])
+
     return(
         <div className={style.main}>
             {/*BigModal({activemodal, setActivemodal, data, setData}*/}
             <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<EntryBlanck man={data}  setActivemodal={setActivemodal}/>} setData={setData} />
             <BigModal activemodal={opengreen} setActivemodal={setOpengreen} data={<Cart data={view} setData={setView} setActivemodal={setOpengreen} write={activemodal} setWrite={setActivemodal}/>} setData={setView}/>
-
+            <CartBlock />
 
             <div className={style.paralax}>
             </div>
@@ -203,13 +227,14 @@ function Cosmos () {
                 <div className={style.contenttwo}>
                     <div className={style.title}><div className={style.nameblock}>НОВИНКИ</div><Link to='/catalog' className={style.relocation}>см. все</Link></div>
                     <div className={style.products}>
-                        {catalog.map((green, index)=>{if(index<10){return(
-                            <div key={index} className={style.block}>
-                                <div className={style.aplicate} style={{backgroundImage: `url('./files/products/${green.image}')`}}></div>
-                                <div className={style.name}>{green.name}</div>
-                                <div className={style.category}>{green.category}</div>
-                                <div className={style.btncart} onClick={()=>{setView(green); setOpengreen(true)}}>БОЛЬШЕ</div>
-                            </div>
+                        {list&&list.map((green, index)=>{if(index<10){return(
+                            <Product key={index} green={green}/>
+                            // <div key={index} className={style.block}>
+                            //     <div className={style.aplicate} style={{backgroundImage: `url('${process.env.REACT_APP_API_URL}${green.image}')`}}></div>
+                            //     <div className={style.name}>{green.name}</div>
+                            //     <div className={style.category}>{green.time}</div>
+                            //     <div className={style.btncart} onClick={()=>{setView(green); setOpengreen(true)}}>БОЛЬШЕ</div>
+                            // </div>
                         )}})}
                     </div>
 

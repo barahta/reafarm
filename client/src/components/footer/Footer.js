@@ -1,7 +1,26 @@
 import style from './FooterStyle.module.scss'
 import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
+import NewsService from "../../services/NewsService";
 
 function Footer (){
+
+    const [data, setData] = useState('')
+    const [thisContacts, setThisContacts] = useState([]);
+    const getCities = async () => {
+        try{
+            const {data} = await NewsService.getCities({capter: 'reafarm'})
+            console.log(data)
+            setThisContacts(data)
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    useEffect(()=>{
+        getCities()
+    }, [])
+
     return(
         <div className={style.main}>
             <div className={style.omediawater}></div>
@@ -68,20 +87,50 @@ function Footer (){
                     </div>
                 </div>
                 <div className={style.contacts}>
-                    <div className={style.data}>
-                        <div className={style.adress}>г. Сургут, ул. Гидростроителей 5</div>
-                        <div className={style.phone}>+7 (3462) 51-13-98</div>
+                    <div className={style.data} style={{display: 'flex' ,flexDirection: 'column', alignItems: 'flex-end'}}>
+                        {(thisContacts[0])&&thisContacts[0].adress.map((adress, indexCity1) => (
+                            <div key={indexCity1} className={style.adress}>{(adress)&&adress}</div>
+                        ))}
+                        {(thisContacts[0])&&thisContacts[0].phone.map((phone, indexCity2) => (
+                            <div key={indexCity2} className={style.phone}>{(phone)&&phone}</div>
+                        ))}
+                        {(thisContacts[0])&&thisContacts[0].email.map((email, indexCity2) => (
+                            <div key={indexCity2} className={style.phone}>{(email)&&email}</div>
+                        ))}
                     </div>
                     <div className={style.sociality}>
-                        <img src="/files/sociality/vk.png" alt=""/>
-                        <img src="/files/sociality/insta.png" alt=""/>
+                        {/*<a href={(thisContacts[0])?thisContacts[0].youtube:''} target="_blank" rel="noopener noreferrer" style={(thisContacts.length < 0 && thisContacts[0].youtube === null || thisContacts[0].youtube === '' || thisContacts[0].youtube === undefined)?{display:'none'}:{}}><img src="/files/sociality/youtube.png" alt=""/></a>*/}
+                        {/*<a href={(thisContacts[0])&&thisContacts[0].telegram} target="_blank" rel="noopener noreferrer" style={(thisContacts[0].telegram === null || thisContacts[0].telegram === '' || thisContacts[0].telegram === undefined)?{display:'none'}:{}}><img src="/files/sociality/telegram.png" alt="" height='71px'/></a>*/}
+                        {/*<a href={(thisContacts[0])&&thisContacts[0].vk} target="_blank" rel="noopener noreferrer" style={(thisContacts[0].vk === null || thisContacts[0].vk === '' || thisContacts[0].vk === undefined)?{display:'none'}:{}}><img src="/files/sociality/vk.png" alt=""/></a>*/}
+                        {/*<a href={(thisContacts[0])&&thisContacts[0].ok} target="_blank" rel="noopener noreferrer" style={(thisContact*/}
+                        <a href={(thisContacts[0])?thisContacts[0].youtube:''} target="_blank" rel="noopener noreferrer" >
+                            {/*<img src="/files/sociality/youtube.png" alt=""/>*/}
+                            <i className="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href={(thisContacts[0])&&thisContacts[0].telegram} target="_blank" rel="noopener noreferrer" >
+                            {/*<img src="/files/sociality/telegram.png" alt="" height='71px'/>*/}
+                            <i className="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href={(thisContacts[0])&&thisContacts[0].vk} target="_blank" rel="noopener noreferrer" >
+                            {/*<img src="/files/sociality/vk.png" alt=""/>*/}
+                            <i className="fa-brands fa-vk"></i>
+                        </a>
+                        <a href={(thisContacts[0])&&thisContacts[0].ok} target="_blank" rel="noopener noreferrer" >
+                            {/*<img src="/files/sociality/ok.png" alt=""/>*/}
+                            <i className="fa-brands fa-square-odnoklassniki"></i>
+                        </a>
+
+                        {/*<img src="/files/sociality/telegram.png" alt="" height='71px'/>*/}
+                        {/*<img src="/files/sociality/youtube.png" alt=""/>*/}
+                        {/*<img src="/files/sociality/vk.png" alt=""/>*/}
+                        {/*<img src="/files/sociality/ok.png" alt=""/>*/}
                     </div>
                     <div className={style.autor}>
                         <div className={style.copyright}>
 
                         </div>
                         <div className={style.description}>
-                            <div className={style.text}>КФХ «РЕАФАРМ»</div>
+                            <div className={style.text}>"Сетевое издание "ОМЕДИА!"</div>
                             <div className={style.text}>Все права защищены</div>
                         </div>
                     </div>
